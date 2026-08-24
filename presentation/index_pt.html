@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Os CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verifica se a janela está em um iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Ativa o realce de sintaxe :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js não carregado!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Desafio #544</h3>
+                            <h2 class="section-title">AES Distrace</h2>
+                            <p>
+Você tem a possibilidade de executar este binário que realiza uma criptografia AES-128-ECB em uma entrada aleatória, enquanto observa o valor de um registrador em um endereço fixo durante todo o cálculo.
+<br /><br />
+<strong>Nota:</strong> O caminho <code>/app/</code> no arquivo Python fornecido (<code>aes-distrace.py</code>) deve ser adaptado ao seu ambiente para executar o desafio localmente.
+                            </p>
+                            <h4>Arquivo(s) a analisar:</h4>
+                            <ul>
+                                <li><a href="../files/aes-distrace.c">aes-distrace.c</a></li>
+                                <li><a href="../files/aes-distrace">aes-distrace</a></li>
+                                <li><a href="../files/aes-distrace.py">aes-distrace.py</a></li>
+                                <li><a href="../files/libexeclog.so">libexeclog.so</a></li>
+                                <li><a href="../files/qemu-x86_64">qemu-x86_64</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Link oficial:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-aes-distrace/">https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-aes-distrace/</a>
+                                <br />
+                                Autor: Cryptanalyse
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aprendizagem</h3>
+                            <h2 class="section-title">Documentação e Vídeos</h2>
+                            <p class="section-subtitle">
+                                Nenhuma documentação no momento
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Ajuda</h3>
+                            <h2 class="section-title">Conselhos e dicas</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Tópico
+                                    no Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Voltar ao topo da página" title="Voltar ao topo"></a>
+    </div>
+</body>
+
+</html>

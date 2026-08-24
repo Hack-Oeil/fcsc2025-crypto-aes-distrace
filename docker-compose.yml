@@ -1,0 +1,18 @@
+services:
+  ssh-544.cyrhades.fr:
+    container_name: ssh-544
+    build:
+      context: ./.docker/ssh
+      args:
+        LANGUAGE: ${LANGUAGE:-fr}
+    labels:
+      ho.ctf.cyrhades: "challenge"
+      ho.ctf.cyrhades.webssh: "1"
+    environment:
+      SSH_HOSTNAME: "ssh-544.cyrhades.fr"
+      SSH_PORT: 22
+      SSH_USERNAME: "cyrhades"
+      SSH_PASSWORD: "secret"
+    restart: unless-stopped
+  aes-distrace.cyrhades.fr:
+    image: anssi/fcsc2025-crypto-aes-distrace:latest
